@@ -1,0 +1,11 @@
+#!/bin/bash
+rm -rf ../system
+make mrproper -j16
+
+make ARCH=arm cm10_defconfig
+ARCH=arm CROSS_COMPILE=~/Android/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- make -j16
+
+#mkdir ../system && mkdir ../system/lib && mkdir ../system/lib/modules
+#cp arch/arm/boot/zImage ../system/
+#find -name '*.ko' -exec cp -av {} ../system/lib/modules/ \;
+
